@@ -57,6 +57,12 @@ public class KeyboardImeService extends InputMethodService {
     }
 
     @Override
+    public void onFinishInput() {
+        super.onFinishInput();
+        controller.getTextController().reset();
+    }
+
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyboardShown){
             Log.d("KeyboardImeService", "onKeyDown code: "+ keyCode);
